@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm i typescript && tsc --init && tsc &&  node ./dist/server.js"
+    "build": "npm install &&  tsc",
+    "dev": "node ./dist/server.js"
   },
   "keywords": [],
   "author": "",
