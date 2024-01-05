@@ -9,7 +9,7 @@ export class Auth extends Model {
 };
 
 Auth.init({
-    id: {
+   id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -18,12 +18,17 @@ Auth.init({
     username: {
         type: DataTypes.TEXT
     },
-    email: {
+    phone_number: {
         type: DataTypes.TEXT,
-        allowNull: false
     },
-    password: {
+    location: {
         type: DataTypes.TEXT
+    },
+    time:{
+        type:DataTypes.TEXT
+    },
+    isAdmin:{
+        type:DataTypes.BOOLEAN
     }
 }, {
     tableName: 'Auth',

@@ -4,36 +4,35 @@ import { newSequelize } from "../config/index";
 
 export class Products extends Model { };
 
-Products.init({
+Products.init(
+  {
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-        unique: true
-    },
-    title: {
-        type: DataTypes.TEXT,
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      unique: true,
     },
     price: {
-        type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
     },
-    description: {
-        type: DataTypes.TEXT
-    },
-    category: {
-        type: DataTypes.TEXT
+    chegPrice: {
+      type: DataTypes.INTEGER,
     },
     image: {
-        type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
-    rate: {
-        type: DataTypes.INTEGER
+    ramka: {
+      type: DataTypes.TEXT,
     },
-    count: {
-        type: DataTypes.INTEGER
+    tavsiya: {
+      type: DataTypes.BOOLEAN,
+    },
+    catigory_id:{
+      type:DataTypes.INTEGER
     }
-
-}, {
-    tableName: 'products',
+  },
+  {
+    tableName: "Product1",
     sequelize: newSequelize,
-})
+  }
+);

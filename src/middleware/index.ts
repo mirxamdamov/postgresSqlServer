@@ -1,38 +1,16 @@
-import { NextFunction, Request, Response } from "express";
-import jwt from 'jsonwebtoken'
+const postM =(req:any,res:any) => {
+      let data = "";
+      req.on("data", (chunk: any) => {
+        data += chunk;
+      });
+      req.on("end", () => {
+        // data o'zida req.body bo'ladi
+         const body = JSON.parse(data);
 
-export const GetMid = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-        if (!req.headers.authorization) {
-            return res.status(404).send({
-                error: {
-                    message: 'tokeniz yo'
-                },
-                data: null,
-                status: 404
-            })
-        }
-        const tokenVerify = jwt.verify(req.headers.authorization, 'olma')
-        if (!tokenVerify) {
-            return res.status(404).send({
-                error: {
-                    message: 'invalit tokenn'
-                },
-                data: null,
-                status: 404
-            })
-        } else{ 
-            next()
-        }       
-    } catch (error:any) {
-        if (error.message = 'invalid token') {
-            res.status(404).send({
-                error: {
-                    message: 'invalit token'
-                },
-                data: null,
-                status: 404
-            })
-        }
-    }
-}   
+        // Endi body o'zida kerakli ma'lumotlarni ishlatishingiz mumkin
+if (!body.price || !body.category_Name || !body.ramka || !body.tavsiya) {
+}
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify({ success: true }));
+      });
+}

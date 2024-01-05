@@ -1,24 +1,24 @@
 import { DataTypes, Model } from "sequelize";
 import { newSequelize } from "../config/index";
 
-export class Orders extends Model {}
+export class Orders_catigory extends Model {}
 
-Orders.init(
+Orders_catigory.init(
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    auth_id: {
+    catigory_id: {
       type: DataTypes.INTEGER,
     },
     product_id: {
-      type: DataTypes.INTEGER, // <<-- INTEGER turiga o'zgartirildi
+      type: DataTypes.INTEGER
     },
   },
   {
-    tableName: "Orders",
+    tableName: "OrdersC",
     sequelize: newSequelize,
   }
 );
