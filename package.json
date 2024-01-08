@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.15",
-    "@types/multer": "^1.4.9"
+    "@types/multer": "^1.4.9",
+    "neon-cli": "^0.10.1"
   }
 }

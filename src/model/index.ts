@@ -19,7 +19,7 @@ export async function model() {
   });
 
   // Ma'lumotlar bazasini yangilash
-  await newSequelize.sync({ alter: true });
+//  await newSequelize.sync({ alter: true });
 
   await testAssociations();
 }
